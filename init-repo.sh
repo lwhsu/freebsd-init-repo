@@ -20,7 +20,5 @@ chmod 755 .git/hooks/prepare-commit-msg
 
 git config --add remote.freebsd.fetch '+refs/internal/*:refs/internal/*'
 git fetch --verbose
-git checkout -b admin internal/admin
+git worktree add -b admin ../${repo}-admin internal/admin
 git config push.default upstream
-
-git checkout main
